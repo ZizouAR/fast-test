@@ -1,13 +1,13 @@
 import { useNavigate } from "react-router";
 import Avatar from "../../../components/avatar";
 import { BiDotsVertical } from "react-icons/bi";
+import type IVideo from "../../../types/Video";
+import clsx from "clsx";
 
-type Props = {
-  title: string;
-  author_name: string;
-  nb_views: number;
-  uploaded_at: string;
-  video_url: string;
+type Props = IVideo & {
+  hideAvatar?: boolean;
+  frameWidth?: string;
+  frameHeight?: string;
 };
 
 export default function VideoCard({
@@ -16,16 +16,19 @@ export default function VideoCard({
   title,
   uploaded_at,
   video_url,
+  hideAvatar = false,
+  frameWidth = '100%',
+  frameHeight = '220'
 }: Props) {
   const navigate = useNavigate();
   return (
     <div
-      className="flex flex-col gap-2 rounded-lg  cursor-pointer"
+      className="flex flex-col gap-2 rounded-lg cursor-pointer"
       onClick={() => navigate("/videos/1")}
     >
       <iframe
-        width="100%"
-        height="220"
+        width={frameWidth}
+        height={frameHeight}
         src={video_url}
         title="YouTube video player"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -35,14 +38,20 @@ export default function VideoCard({
       ></iframe>
       <div className="flex items-start gap-3">
         {/* Avatar */}
-        <div className="flex-shrink-0">
+        <div
+          className={clsx("flex-shrink-0", {
+            hidden: hideAvatar,
+          })}
+        >
           <Avatar />
         </div>
 
         {/* Info */}
         <div className="flex flex-col flex-1 gap-0.5">
           <h5 className="text-zinc-50 text-base">{title}</h5>
-          <span className="text-zinc-500 font-medium text-sm">{author_name}</span>
+          <span className="text-zinc-500 font-medium text-sm">
+            {author_name}
+          </span>
           <span className="text-zinc-500 text-xs">
             {nb_views} de vues • {uploaded_at}
           </span>
