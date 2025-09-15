@@ -33,7 +33,7 @@ const TAGS = [
 export default function VideosTags() {
   return (
     <div className="flex gap-4 items-center">
-      <div className="flex gap-2 space-x-3 overflow-x-hidden w-[calc(100%-5rem)] pb-2">
+      <div className="flex space-x-3 overflow-x-hidden w-[calc(100%-1rem)] pb-2">
         {TAGS.map(({ title, active }, index) => (
           <div
             key={index}
