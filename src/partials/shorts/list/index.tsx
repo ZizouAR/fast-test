@@ -3,12 +3,10 @@ import ShortCard from "../card";
 
 type Props = {
   shortsToShow?: number;
-  arrowControl?: boolean;
   showMore?: boolean;
 };
 
 export default function ShortsList({
-  arrowControl = false,
   shortsToShow = 4,
   showMore = true,
 }: Props) {

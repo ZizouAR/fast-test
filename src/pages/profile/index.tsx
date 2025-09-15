@@ -26,7 +26,7 @@ export default function ProfilePage() {
         <div className="flex gap-5 overflow-x-hidden w-[calc(100%-2rem)]">
           {[...VIDEOS, ...VIDEOS, ...VIDEOS].map((v) => (
             <VideoCard
-              key={v.title}
+              key={v.id}
               {...v}
               hideAvatar
               frameWidth="240"
@@ -62,6 +62,7 @@ export default function ProfilePage() {
 
 const VIDEOS = [
   {
+    id: 1,
     title: "Top 10 JavaScript Tips You Should Know",
     author_name: "CodeWithZee",
     nb_views: 1284300,
@@ -69,6 +70,7 @@ const VIDEOS = [
     video_url: "https://www.youtube.com/embed/fiqxEb_URX0?si=B75p41pKJK0WMhme",
   },
   {
+    id: 2,
     title: "Live Concert: The Weekend Full Performance",
     author_name: "MusicWorld",
     nb_views: 985400,
@@ -76,6 +78,7 @@ const VIDEOS = [
     video_url: "https://www.youtube.com/embed/fiqxEb_URX0?si=B75p41pKJK0WMhme",
   },
   {
+    id: 3,
     title: "FC Barcelona vs Real Madrid | Highlights",
     author_name: "SportsHub",
     nb_views: 2230000,
