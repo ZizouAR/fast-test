@@ -5,12 +5,14 @@ import { BiBell, BiCameraMovie, BiSearch } from "react-icons/bi";
 import Avatar from "../../components/avatar";
 import { FaMicrophone } from "react-icons/fa";
 import clsx from "clsx";
+import type { Dispatch, SetStateAction } from "react";
 
 type Props = {
   navbarPlayerMode: boolean;
+  setOpenSidebar: Dispatch<SetStateAction<boolean>>
 };
 
-export default function Navbar({ navbarPlayerMode }: Props) {
+export default function Navbar({ navbarPlayerMode, setOpenSidebar }: Props) {
   const navigate = useNavigate();
 
   return (
@@ -20,10 +22,10 @@ export default function Navbar({ navbarPlayerMode }: Props) {
       })}
     >
       <div className="flex items-center gap-6 pl-2">
-        <GiHamburgerMenu color="white" size={20} />
+        <GiHamburgerMenu color="white" size={20} onClick={() => setOpenSidebar(prev => !prev)} />
         <Logo />
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 hidden md:block lg:flex">
         <div className="w-138 border border-zinc-500 text-white text-sm rounded-3xl py-2 px-4 flex items-center gap-5">
           <BiSearch className="text-zinc-500" size={22} />
           <input
