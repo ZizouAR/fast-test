@@ -10,7 +10,7 @@ type Props = {
 
 export default function ShortCard({ short_url, title, nb_views }: Props) {
   return (
-    <div className="basis-1/4 flex flex-col gap-3">
+    <div className="basis-1/3 flex flex-col gap-3">
       <img src={short_url} className="rounded-lg object-cover" />
 
       <div className="flex justify-between">
