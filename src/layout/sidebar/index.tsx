@@ -2,10 +2,14 @@ import clsx from "clsx";
 import type { IconType } from "react-icons";
 import { BiHistory, BiHome, BiMoviePlay, BiMusic } from "react-icons/bi";
 import { FaRegLightbulb, FaRegNewspaper, FaVideoSlash } from "react-icons/fa";
-import { MdLocalMovies, MdSportsBasketball, MdVideoSettings } from "react-icons/md";
+import {
+  MdLocalMovies,
+  MdSportsBasketball,
+  MdVideoSettings,
+} from "react-icons/md";
 import type { ObjectId } from "../../types/Global";
-import type { ReactNode } from "react";
-import { Link } from "react-router";
+import { useEffect, type ReactNode } from "react";
+import { Link, useOutletContext } from "react-router";
 import { FiRewind } from "react-icons/fi";
 import { TbNetwork } from "react-icons/tb";
 import { BsController } from "react-icons/bs";
@@ -139,8 +143,31 @@ const SIDEBAR_CONTENT: Array<SidebarContentType> = [
 ];
 
 export default function Sidebar() {
+  const { openSidebar } = useOutletContext<{ openSidebar: boolean }>();
+
+  useEffect(() => {
+    if (openSidebar) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [openSidebar]);
+  
   return (
-    <div className="basis-1/5 flex flex-col gap-10 mt-20 pt-5 px-4 h-[calc(100vh-5rem)] overflow-y-auto onhover sticky top-20 hidden md:block lg:block">
+    <div
+      className={clsx(
+        // base styles
+        "flex flex-col gap-10 mt-20 pt-5 px-4 h-[calc(100vh-5rem)] overflow-y-auto top-0 bg-zinc-900",
+        // desktop always visible
+        "fixed md:sticky md:basis-1/5 md:top-20",
+        // mobile slide-in
+        "fixed top-0 left-0 w-full z-10 md:relative md:translate-x-0 transform transition-transform duration-300 ease-in-out",
+        openSidebar ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+      )}
+    >
       <div className="w-full">
         {SIDEBAR_CONTENT.map(({ links, TextContent, id }) => (
           <div key={id}>
@@ -151,7 +178,7 @@ export default function Sidebar() {
                   <div
                     key={linkId}
                     className={clsx(
-                      "w-full font-medium px-2 py-2 text-zinc-50 rounded-md flex gap-5 items-center pointer",
+                      "w-full font-medium px-2 py-2 text-zinc-50 rounded-md flex gap-5 items-center cursor-pointer",
                       {
                         "bg-zinc-800": active,
                       }
