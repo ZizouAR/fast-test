@@ -4,7 +4,7 @@ import VideosTags from "../../partials/videos/tags";
 
 export default function VideosPage() {
   return (
-    <div className="flex flex-col gap-5 pr-8">
+    <div className="flex flex-col gap-5 px-4">
       <VideosTags />
 
       <VideosList videos={VIDEOS} />
