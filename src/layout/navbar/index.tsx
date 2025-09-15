@@ -41,6 +41,7 @@ export default function Navbar({ navbarPlayerMode, setOpenSidebar }: Props) {
         </div>
       </div>
       <div className="flex items-center gap-6">
+        <BiSearch color="white" size={24} onClick={() => navigate("videos")} />
         <BiCameraMovie color="white" size={24} />
         <div className="relative">
           <div className="flex justify-center absolute text-zinc-50 bg-red-500 rounded-full right-0 items-center w-3 h-3 text-[10px]">
