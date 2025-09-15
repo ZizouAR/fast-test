@@ -13,14 +13,13 @@ export default function VideoShowPage() {
   }>();
 
   useEffect(() => {
-    setNavbarPlayerMode(true);
     return () => setNavbarPlayerMode(false);
   }, []);
 
   return (
-    <div className="px-24 flex gap-10 py-20">
+    <div className="px-4 md:px-24 flex gap-10 py-20">
       {/* VIDEO */}
-      <div className="basis-2/3 flex flex-col gap-10">
+      <div className="md:basis-2/3 flex flex-col gap-4 md:gap-10">
         {/* SCREEN */}
         <VideoPlayerPage />
 
@@ -29,7 +28,7 @@ export default function VideoShowPage() {
           Top 10 JavaScript Tips You Should Know
         </h1>
 
-        <div className="flex justify-between">
+        <div className="flex flex-col gap-4 md:flex-row md:justify-between">
           <div className="flex gap-5 items-center">
             <Avatar />
             <div>
@@ -42,7 +41,7 @@ export default function VideoShowPage() {
             </div>
           </div>
 
-          <div className="flex gap-5">
+          <div className="flex md:flex-row gap-5">
             <div className="bg-zinc-800 text-zinc-50 rounded-3xl flex items-center px-3">
               24.4 K{" "}
             </div>
