@@ -10,7 +10,7 @@ type Props = {
 export default function VideosList({videos, nbVideosToShow = 3, hideAvatar}: Props) {
   return (
     <div>
-      <div className={`grid grid-cols-${nbVideosToShow.toString()} gap-[16px] px-3`}>
+      <div className={`grid grid-cols-1 md:grid-cols-${nbVideosToShow.toString()} lg:grid-cols-${nbVideosToShow.toString()} gap-[16px] px-3`}>
         {videos.map((video) => (
           <VideoCard key={video.title} {...{...video, hideAvatar}} />
         ))}
