@@ -160,7 +160,7 @@ export default function Sidebar() {
     <div
       className={clsx(
         // base styles
-        "flex flex-col gap-10 mt-20 pt-5 px-4 h-[calc(100vh-5rem)] overflow-y-auto top-0 bg-zinc-900",
+        "flex flex-col gap-10 mt-16 md:mt-20 pt-5 px-4 h-full md:h-[calc(100vh-5rem)] overflow-y-auto top-0 bg-zinc-900",
         // desktop always visible
         "fixed md:sticky md:basis-1/5 md:top-20",
         // mobile slide-in
