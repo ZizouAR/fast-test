@@ -1,6 +1,6 @@
 export default function HomePage() {
   return (
-    <div className="flex justify-center w-full">
+    <div className="flex justify-center w-full p-4">
       <div className="bg-zinc-800 border-zinc-500 border rounded-md text-center px-6 py-8">
         <h2 className="text-white text-2xl font-medium">
           Try searching to get started
