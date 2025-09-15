@@ -46,7 +46,9 @@ export default function Navbar({ navbarPlayerMode }: Props) {
           </div>
           <BiBell color="white" size={24} />
         </div>
-        <Avatar size="sm" />
+        <div onClick={() => navigate("/profile")} className="cursor-pointer">
+          <Avatar size="sm" />
+        </div>
       </div>
     </div>
   );
