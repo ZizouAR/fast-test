@@ -4,6 +4,7 @@ import HomePage from "./pages/home";
 import VideosPage from "./pages/videos";
 import VideoShowPage from "./pages/videos/show";
 import SidebarLayout from "./layout/sidebar/layout";
+import ProfilePage from "./pages/profile";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route element={<SidebarLayout />}>
             <Route index element={<HomePage />} />
             <Route path="/videos" element={<VideosPage />} />
+            <Route path="/profile" element={<ProfilePage />} />
           </Route>
           <Route path="/videos/:id" element={<VideoShowPage />} />
         </Route>
