@@ -7,7 +7,7 @@ import VideosList from "../../partials/videos/list";
 
 export default function ProfilePage() {
   return (
-    <div className="p-2 space-y-16">
+    <div className="p-2 space-y-4 md:space-y-16">
       <ProfileBanner />
       <ProfileIdentity />
       <ProfileTabs />
