@@ -23,7 +23,7 @@ export default function ShortsList({
 
         <CgClose color="white" size={22} />
       </div>
-      <div className="flex space-x-2 relative">
+      <div className="flex gap-2 flex-col md:flex-row lg:flex-row relative">
         {SHORTS.slice(0, shortsToShow).map((short) => (
           <ShortCard {...short} key={short.id} />
         ))}
@@ -31,7 +31,7 @@ export default function ShortsList({
       <div className="relative">
         <hr className="bg-zinc-600 w-full h-[2px] my-6" />
         {showMore ? (
-          <div className="absolute top-2 right-[50%] z-index-1 bg-zinc-900 px-3 rounded-3xl border border-zinc-600 py-1 flex items-center gap-3">
+          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 z-index-1 bg-zinc-900 px-3 rounded-3xl border border-zinc-600 py-1 flex items-center gap-3">
             <span className="text-zinc-50">Show More</span>
             <span className="text-zinc-600">
               <CgChevronDown size={20} />
