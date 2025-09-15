@@ -140,7 +140,7 @@ const SIDEBAR_CONTENT: Array<SidebarContentType> = [
 
 export default function Sidebar() {
   return (
-    <div className="basis-1/5 flex flex-col gap-10 mt-20 pt-5 px-4 h-[calc(100vh-5rem)] overflow-y-auto onhover sticky top-20">
+    <div className="basis-1/5 flex flex-col gap-10 mt-20 pt-5 px-4 h-[calc(100vh-5rem)] overflow-y-auto onhover sticky top-20 hidden md:block lg:block">
       <div className="w-full">
         {SIDEBAR_CONTENT.map(({ links, TextContent, id }) => (
           <div key={id}>
