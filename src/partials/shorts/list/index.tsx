@@ -1,6 +1,5 @@
 import { CgChevronDown, CgClose } from "react-icons/cg";
 import ShortCard from "../card";
-import { BiChevronRight } from "react-icons/bi";
 
 type Props = {
   shortsToShow?: number;
