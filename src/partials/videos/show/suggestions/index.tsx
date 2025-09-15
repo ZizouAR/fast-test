@@ -49,7 +49,7 @@ const VIDEOS = [
 
 export default function Suggestions() {
   return (
-    <div className="basis-1/3 overflow-hidden">
+    <div className="hidden md:block basis-1/3 overflow-hidden">
       <VideosTags />
       <br />
       
